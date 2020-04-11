@@ -1,0 +1,107 @@
+/* pages/user/user_venue.wxss */
+
+.table {
+  border: 0px solid darkgray;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+
+.td {
+  width: 40%;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-w {
+  background: snow;
+}
+
+.bg-g {
+  background: #e6f3f9;
+}
+
+.th {
+  width: 40%;
+  justify-content: center;
+  background: #36f;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+
+.zhu {
+  font-size: smaller;
+  font-style: oblique;
+  margin: 25px 0px 0px 0px;
+}
+
+.newscontent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.venue {
+  color: red;
+}
+
+.mark {
+  color: black; /*设置文字颜色*/
+  font-weight: bold; /*设置字体加粗*/
+  font-family: "宋体";
+  text-align: center;
+  font-size: large;
+  display: block;
+  margin: 50rpx;
+}
+
+.buttoncontent {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50rpx;
+  margin-left: 70rpx;
+  margin-right: 70rpx;
+  margin-bottom: 50rpx;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.full {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center; /*定义body的元素垂直居中*/
+  justify-content: center; /*定义body的里的元素水平居中*/
+}
+
+.content {
+  margin-top: 50px;
+  align-items: center; /*定义body的元素垂直居中*/
+  justify-content: center; /*定义body的里的元素水平居中*/
+}
+
+.radio-group {
+  align-items: center; /*定义body的元素垂直居中*/
+  justify-content: center; /*定义body的里的元素水平居中*/
+  margin: 30px 40px 70px 40px;
+}
+
+.button {
+  margin: 50px 40px 70px 40px;
+}
+
+.address-add {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.tabpage{
+  margin-bottom:65px;
+}

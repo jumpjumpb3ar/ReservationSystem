@@ -1,0 +1,86 @@
+<!--pages/manager/manager_my.wxml-->
+<!--pages/user/user_myinfo.wxml-->
+<text class="mark">账号信息</text>
+<van-cell-group>
+  <van-field value="{{code}}" label="学号" left-icon="user-circle-o" readonly border="{{ true }}" />
+  <van-field value="{{name}}" label="姓名" left-icon="contact" readonly border="{{true}}" />
+  <van-field value="管理员" label="身份" left-icon="manager-o" readonly border="{{ true }}" />
+  <van-field value="{{password }}" left-icon="closed-eye" type="password" clearable label="密码" placeholder="请输入密码" required border="{{ true }}" bind:change="onChange" />
+
+</van-cell-group>
+
+
+
+
+
+
+
+<view class="buttoncontent">
+
+  <van-button plain type="info" round="true" bind:click="changecode" block>
+    修改密码
+  </van-button>
+
+  <van-button plain type="info" round="true" bind:click="relogin" block>
+    重新登陆
+  </van-button>
+
+</view>
+
+<van-divider hairline />
+<text class="mark">值班信息</text>
+
+
+
+<van-cell-group>
+  <van-field value="{{placename}}" 
+  label="值班场地" 
+  readonly
+  border="{{true}}" />
+  <van-field value="{{name}}"
+  label="管理员"
+  readonly 
+  border="{{true}}" />
+  <van-field value="{{startdate}}" 
+  label="开始时间" 
+  readonly 
+  border="{{ true }}" />
+  <van-field value="{{enddate}}" 
+  label="结束时间" 
+  readonly 
+  border="{{ true }}" />
+
+</van-cell-group>
+
+
+
+
+
+
+
+
+<!-- <view class="table">
+  <view class="tr bg-w">
+    <view class="th">值班场地</view>
+    <view class="th">管理员</view>
+    <view class="th ">开始时间</view>
+    <view class="th ">结束时间</view>
+  </view>
+  <view wx:for="{{equiplist}}" wx:key="_id" data-index="{{index}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.equipcode}}</view>
+      <view class="td">{{item.name}}</view>
+      <view class="td">{{item.num}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.equipcode}}</view>
+      <view class="td">{{item.name}}</view>
+      <view class="td">{{item.num}}</view>
+    </view>
+  </view>
+</view>
+ -->
+
+<view class="tabbar">
+  <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange" current="1"></mp-tabbar>
+</view>

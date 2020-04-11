@@ -1,0 +1,70 @@
+<view class="page">
+
+  <map id="map" longitude="116.4277430000" latitude="39.9809500000" scale="16" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" enable-zoom="{{false}}" enable-scroll="{{false}}" bindmarkertap="markertap" polyline="{{polyline}}"
+    bindregionchange="regionchange" show-location style="width: 100%; height: 400px;">
+  </map>
+  <view class="mark">请在地图中选择您想了解的场馆
+  <view class="mark">当前选择:<text class="venue">[{{mapchoose}}]</text></view>
+  </view>
+
+<view class="button">
+  <van-button plain type="info" round="true" bind:click="gotoVenue" block>
+    查询该场馆的场地信息
+  </van-button>
+</view>
+  <view class="tabbar">
+    <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange" current="0"></mp-tabbar>
+  </view>
+
+</view>
+<!-- <view class="section" style="width: 100%; height: 150px;">
+  <view class="section__title">请选择您的预约:</view>
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" 
+  value="{{multiIndex}}" 
+  range="{{multiArray}}">
+    <view class="mark">
+      场地：{{multiArray[0][multiIndex[0]]}} 星期：{{multiArray[1][multiIndex[1]]}}时间：{{multiArray[2][multiIndex[2]]}}
+      
+    </view>
+  </picker>
+</view> -->
+
+
+
+
+
+
+<!-- <view>
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 150px;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{venues}}" style="line-height: 50px">{场地:{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{weeks}}" style="line-height: 50px">{星期:{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{days}}" style="line-height: 50px">{时间:{item}}</view>
+    </picker-view-column>
+  </picker-view>
+  <view class="mark">
+    <text>场地：{{venus}} 星期：{{week}}时间：{{time}}</text>
+  </view>
+</view> -->
+<!-- 
+<van-button 
+  block type="primary"  
+  bind:click="useCloud">
+  调用云函数
+</van-button> -->
+
+
+
+
+<!-- <view wx:for="{{datalist}}" wx:key="item">
+  <view>
+    <view>{{item.name}}</view>
+    <view>{{item.fee}}</view>
+
+  </view>
+
+</view> -->

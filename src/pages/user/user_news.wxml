@@ -1,0 +1,23 @@
+<!--src/pages/user/user_my.wxml-->
+
+<view class="mark">新闻</view>
+
+<view wx:for="{{listdata}}" wx:key="_id" data-index="{{index}}">
+
+  <van-panel status="{{item.bureau}}">
+    <view class="mark">{{item.theme}}</view>
+    <view class="newscontent">
+
+      <view class="zhu">发布时间：{{item.startdate}}</view>
+      <van-button size="small" id="{{item.newscode}}" bindtap="check">查看</van-button>
+
+    </view>
+  </van-panel>
+
+  <van-divider customStyle="color: #1989fa;border-color: #1989fa;" />
+</view>
+
+
+<view class="tabbar">
+  <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange" current="2"></mp-tabbar>
+</view>

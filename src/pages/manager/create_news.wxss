@@ -1,0 +1,2 @@
+/* pages/manager/create_news.wxss */
+@import "../user/user_venue.wxss";

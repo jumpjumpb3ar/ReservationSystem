@@ -1,0 +1,17 @@
+<!--pages/news/news.wxml-->
+
+<view class="mark">{{listdata[0].theme}}</view> 
+
+
+<van-panel  title="{{listdata[0].bureau}}:" status="{{listdata[0].startdate}}">
+<view class="newscontent">
+<view class="mark">{{listdata[0].article}}</view>
+
+ 
+</view>
+</van-panel>
+<van-divider customStyle="color: #1989fa;border-color: #1989fa;"/>
+
+<view class="enddate">失效时间：{{listdata[0].enddate}}</view>
+
+

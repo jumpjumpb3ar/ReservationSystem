@@ -1,0 +1,5 @@
+/* pages/news/news.wxss */
+@import "../user/user_venue.wxss";
+.enddate{
+  float: right;
+}

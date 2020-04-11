@@ -1,0 +1,2 @@
+/* pages/manager/manager_my.wxss */
+@import "../user/user_venue.wxss"

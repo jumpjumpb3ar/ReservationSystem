@@ -1,0 +1,55 @@
+<!--src/pages/user/user_my.wxml-->
+<view class="table">
+  <text class="mark">月总榜</text>
+  <view class="tr bg-w">
+    <view class="th">学号</view>
+    <view class="th">名次</view>
+  </view>
+  <view wx:for="{{listdata1}}" wx:key="_id" data-index="{{index}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.code}}</view>
+      <view class="td">{{item.index}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.code}}</view>
+      <view class="td">{{item.index}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="table">
+  <text text class="mark">我的排名</text>
+  <view class="tr bg-w">
+    <view class="th">学号</view>
+    <view class="th">名次</view>
+  </view>
+  <view wx:for="{{listdata2}}" wx:key="_id" data-index="{{index}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.code}}</view>
+      <view class="td">{{item.index}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.code}}</view>
+      <view class="td">{{item.index}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view class="buttoncontent">
+
+  <van-button plain type="info" round="true" bind:click="gotoMyorder" block>
+    我的预约
+  </van-button>
+
+  <van-button plain type="info" round="true" bind:click="gotoMyinfo" block>
+    账户信息
+  </van-button>
+
+</view>
+
+
+
+<view class="tabbar">
+  <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange" current="1"></mp-tabbar>
+</view>

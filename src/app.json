@@ -1,0 +1,44 @@
+{
+  "usingComponents": {
+    "mp-tabbar": "weui-miniprogram/tabbar/tabbar",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-panel": "@vant/weapp/panel/index"
+  },
+  "pages": [
+    "pages/login/login",
+    "pages/news/news",
+    "pages/user/user_map",
+    "pages/user/user_venue",
+    "pages/user/user_myorder",
+    "pages/user/user_myinfo",
+    "pages/user/user_my",
+    "pages/user/user_news",
+    "pages/user/user_order",
+    "pages/manager/manager",
+    "pages/manager/manager_my",
+    "pages/manager/manager_news",
+    "pages/index/index",
+    "pages/manager/create_news"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "体育馆预约系统",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

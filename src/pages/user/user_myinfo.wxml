@@ -1,0 +1,55 @@
+<!--pages/user/user_myinfo.wxml-->
+<text class="mark">账号信息</text>
+<van-cell-group>
+  <van-field
+    value="{{code}}"
+    label="学号"
+    left-icon="user-circle-o"
+    readonly
+    border="{{ true }}"
+  />
+  <van-field
+    value="{{name}}"
+    label="姓名"
+    left-icon="contact"
+    readonly
+    border="{{true}}"
+  />
+  <van-field
+    value="学生"
+    label="身份"
+    left-icon="manager-o"
+    readonly
+    border="{{ true }}"
+  />
+   <van-field
+    value="{{password }}"
+    left-icon="closed-eye"
+    type="password"
+    clearable
+    label="密码"
+    placeholder="请输入密码"
+    required
+    border="{{ true }}"
+     bind:change="onChange"
+  />
+
+</van-cell-group>
+
+
+
+
+
+
+
+<view class="buttoncontent">
+
+  <van-button plain type="info" round="true" bind:click="changecode" block>
+    修改密码
+  </van-button>
+
+  <van-button plain type="info" round="true" bind:click="relogin" block>
+    重新登陆
+  </van-button>
+
+</view>

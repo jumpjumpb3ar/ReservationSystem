@@ -1,0 +1,55 @@
+<!--pages/user/user_venue.wxml-->
+<view class="table" >
+ <view class="tr bg-w">
+ <view class="th">场地名称</view>
+ <view class="th">人数上限</view>
+ <view class="th ">时间点</view>
+ <view class="th">小时费用</view>
+  <view class="th">开放日期</view>
+ </view>
+ <view wx:for="{{listdata}}" wx:key="_id" bindtap='itemclick' data-index="{{index}}">
+ <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+  <view class="td">{{item.name}}</view>
+  <view class="td">{{item.maxpeople}}</view>
+  <view class="td">{{item.opendate}}</view>
+  <view class="td">{{item.fee}}</view>
+  <view class="td">{{item.week}}</view>
+ </view>
+ <view class="tr" wx:else>
+  <view class="td">{{item.name}}</view>
+  <view class="td">{{item.maxpeople}}</view>
+  <view class="td">{{item.opendate}}</view>
+  <view class="td">{{item.fee}}</view>
+  <view class="td">{{item.week}}</view>
+ </view>
+ </view>
+</view>
+
+
+<view class="mark">当前选择:<text class="venue">{{choose1}}</text>时间的<text class="venue">[{{choose2}}]</text></view>
+
+
+
+  <van-button plain type="info" round="true" bind:click="selectWeek" block>
+    选择星期
+  </van-button>
+
+<view class="zhu">
+<view>注:</view>
+<view>开放时间9代表上午9—10点</view>
+<view>开放日期1,2代表每周一二开放</view>
+</view>
+
+
+
+<van-popup show="{{show}}"  position="bottom">
+<van-picker
+  show-toolbar
+  title="选择星期"
+  columns="{{columns}}"
+  bind:cancel="onCancel"
+  bind:confirm="onConfirm"
+/>
+
+
+</van-popup>

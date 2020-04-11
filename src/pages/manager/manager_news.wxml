@@ -1,0 +1,28 @@
+<!--src/pages/manager/manager_news.wxml-->
+<view class="tabpage">
+  <view class="mark">我发布的新闻</view>
+  <view wx:for="{{listdata}}" wx:key="_id" data-index="{{index}}">
+    <van-cell-group>
+      <van-field id="theme" bind:change="onChange" value="{{item.theme}}" label="新闻标题" border="{{true}}" />
+      <van-field id="bureau" bind:change="onChange" value="{{item.bureau}}" label="发布单位" border="{{ true }}" />
+      <van-field id="article" bind:change="onChange" value="{{item.article}}" label="新闻内容" border="{{true}}" type="textarea" autosize />
+      <van-field id="startdate" bind:change="onChange" value="{{item.startdate}}" label="发布时间" border="{{true}}" />
+      <van-field id="enddate" bind:change="onChange" value="{{item.enddate}}" label="过期时间" border="{{true}}" />
+      <van-field id="newscode" bind:change="onChange" value="{{item.newscode}}" label="新闻编号" border="{{true}}" />
+    </van-cell-group>
+    <view class="buttoncontent">
+      <van-button id="{{item.newscode}}" plain type="info" round="true" bind:click="change" block>
+        修改
+      </van-button>
+      <van-button id="{{item.newscode}}" plain type="info" round="true" bind:click="delete" block>
+        删除
+      </van-button>
+    </view>
+    <van-divider customStyle="color: #1989fa;border-color: #1989fa;" />
+  </view>
+
+</view>
+<view class="tabbar">
+  <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange" current="2"></mp-tabbar>
+</view>
+<van-button round class="address-add" color="linear-gradient(to right, #4bb0ff, #6149f6)" icon="plus" bind:click="addnews" type="primary" />

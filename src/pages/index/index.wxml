@@ -1,0 +1,19 @@
+
+<van-button 
+  round block type="primary"  
+  bind:click="navigaterToUsers">
+  用户界面
+</van-button>
+
+<van-button 
+  round block type="primary"  
+  bind:click="navigaterToManager">
+  管理员界面
+</van-button>
+
+<van-button 
+  round block type="primary"  
+  bind:click="navigaterToNews">
+  新闻界面
+</van-button>
+

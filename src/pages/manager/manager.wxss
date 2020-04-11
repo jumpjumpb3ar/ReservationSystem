@@ -1,0 +1,5 @@
+/* pages/manager/manager.wxss */
+@import "../user/user_venue.wxss";
+.button{
+  margin:30px 40px 70px 40px;
+}

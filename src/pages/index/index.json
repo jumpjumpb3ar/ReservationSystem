@@ -1,0 +1,13 @@
+
+{
+  "usingComponents": {
+    "van-row": "vant-weapp/row/index",
+    "van-col": "vant-weapp/col/index",
+    "van-button": "vant-weapp/button/index",
+    "van-cell": "vant-weapp/cell/index",
+    "van-cell-group": "vant-weapp/cell-group/index",
+    "mp-tabbar": "weui-miniprogram/tabbar/tabbar"
+    
+  },
+  "navigationBarTitleText": "选择界面"
+}

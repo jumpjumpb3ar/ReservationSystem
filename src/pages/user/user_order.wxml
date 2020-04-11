@@ -1,0 +1,38 @@
+
+
+<text class="mark">订单信息</text>
+
+
+
+<van-cell-group>
+<van-field value="{{usercode}}" 
+  label="学号" 
+  readonly
+  border="{{true}}" />
+  <van-field value="{{placename}}" 
+  label="场地名称" 
+  readonly
+  border="{{true}}" />
+  <van-field value="{{time}}"
+  label="时间"
+  readonly 
+  border="{{true}}" />
+  <van-field value="{{week}}" 
+  label="星期" 
+  readonly 
+  border="{{ true }}" />
+  <van-field value="{{fee}}" 
+  label="费用" 
+  readonly 
+  border="{{ true }}" />
+
+</van-cell-group>
+
+
+
+<view class="button">
+<view class="button">
+  <van-button plain type="info" round="true" bind:click="order" block>
+    预约
+  </van-button>
+</view></view>

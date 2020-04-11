@@ -1,0 +1,19 @@
+<!--pages/manager/create_news.wxml-->
+<view class="mark">编辑新的新闻</view>
+
+<van-cell-group>
+  <van-field id="theme" bind:change="onChange" placeholder="请输入新闻标题" label="新闻标题" border="{{true}}" />
+  <van-field id="bureau" bind:change="onChange" placeholder="请输入发布单位" label="发布单位" border="{{ true }}" />
+  <van-field id="article" bind:change="onChange" placeholder="请输入新闻内容" label="新闻内容" border="{{true}}" type="textarea" autosize />
+  <van-field id="startdate" bind:change="onChange" value="{{starttime}}" label="发布时间" border="{{true}}" />
+  <van-field id="enddate" bind:change="onChange" placeholder="请输入过期时间" label="过期时间" border="{{true}}" />
+  <van-field id="newscode" bind:change="onChange" placeholder="请输入新闻编号" label="新闻编号" border="{{true}}" />
+  <van-field id="newscode" bind:change="onChange" value="{{mangercode}} " label="管理员学号" border="{{true}}" />
+</van-cell-group>
+<van-divider customStyle="color: #1989fa;border-color: #1989fa;" />
+
+<view class="button">
+  <van-button id="{{item.newscode}}" plain type="info" round="true" bind:click="change" block>
+    提交
+  </van-button>
+</view>

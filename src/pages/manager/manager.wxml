@@ -1,0 +1,95 @@
+<!--pages/manager/manager.wxml-->
+
+
+<view class="mark">场地修改表</view>
+<van-cell-group>
+  <van-field id="inVenue" bind:change="onChange" value="{{datalist[0].name}}" label="场地名称" border="{{ true }}" />
+  <van-field id="inMaxpeople" bind:change="onChange" value="{{datalist[0].maxpeople}}" type="number" label="最大人数" border="{{true}}" />
+  <van-field id="inFee" bind:change="onChange" value="{{datalist[0].fee}}" label="每小时费用" type="number" border="{{true}}" />
+  <van-field id="inWeek" bind:change="onChange" value="{{datalist[0].week}}" label="星期" border="{{true}}" />
+  <!-- <view wx:for="{{equiplist}}" wx:key="_id" bindtap='itemclick' data-index="{{index}}">
+  <van-field
+    value="{{item.equipcode}}{{item.name}}"
+    label="器材"
+    readonly
+    border="{{true}}"
+  />
+  <van-field
+    value="{{item.num}}"
+    label="数量"
+    border="{{true}}"
+  />
+ </view> -->
+</van-cell-group>
+
+
+<view class="button">
+  <van-button plain type="info" round="true" bind:click="changeVenue" block>
+    修改场地信息
+  </van-button>
+</view>
+<!-- <view class="table" >
+ <view class="tr bg-w">
+ <view class="th">场地名称</view>
+ <view class="th">最大人数</view>
+ <view class="th ">开放时间点</view>
+ <view class="th">每小时费用</view>
+  <view class="th">开放日期</view>
+ </view>
+ <view wx:for="{{datalist}}" wx:key="_id"data-index="{{index}}">
+ <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+  <view class="td">{{item.name}}</view>
+  <view class="td">{{item.maxpeople}}</view>
+  <view class="td">{{item.opendate}}</view>
+  <view class="td">{{item.fee}}</view>
+  <view class="td">{{item.week}}</view>
+ </view>
+ <view class="tr" wx:else>
+  <view class="td">{{item.name}}</view>
+  <view class="td">{{item.maxpeople}}</view>
+  <view class="td">{{item.opendate}}</view>
+  <view class="td">{{item.fee}}</view>
+  <view class="td">{{item.week}}</view>
+ </view>
+ </view>
+</view> -->
+<view class="mark">器材修改表</view>
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">器材编号</view>
+    <view class="th">器材名称</view>
+    <view class="th ">器材数量</view>
+  </view>
+  <view wx:for="{{equiplist}}" wx:key="_id" data-index="{{index}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.equipcode}}</view>
+      <view class="td">{{item.name}}</view>
+      <view class="td">{{item.num}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.equipcode}}</view>
+      <view class="td">{{item.name}}</view>
+      <view class="td">{{item.num}}</view>
+    </view>
+  </view>
+</view>
+
+
+<van-cell-group>
+  <van-field id="inEqcode" placeholder="请输入器材编号如：LQQ-1" label="器材编号" border="{{ true }}" bind:change="onChange" />
+  <van-field id="inEqnum" placeholder="请输入要修改的数量如：1" label="器材数量" type="number" border="{{ true }}" bind:change="onChange" />
+
+</van-cell-group>
+
+
+
+<view class="button">
+  <van-button plain type="info" round="true" bind:click="changeEquip" block>
+    修改器材信息
+  </van-button>
+</view>
+
+
+<view class="tabbar">
+  <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange" current="0"></mp-tabbar>
+</view>
