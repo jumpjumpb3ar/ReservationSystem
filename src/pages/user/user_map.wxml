@@ -1,3 +1,4 @@
+<view class = "tabpage">
 <view class="page">
 
   <map id="map" longitude="116.4277430000" latitude="39.9809500000" scale="16" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" enable-zoom="{{false}}" enable-scroll="{{false}}" bindmarkertap="markertap" polyline="{{polyline}}"
@@ -15,7 +16,7 @@
   <view class="tabbar">
     <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange" current="0"></mp-tabbar>
   </view>
-
+</view>
 </view>
 <!-- <view class="section" style="width: 100%; height: 150px;">
   <view class="section__title">请选择您的预约:</view>

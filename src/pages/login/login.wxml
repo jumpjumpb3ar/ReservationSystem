@@ -1,7 +1,7 @@
 <!--pages/login/login.wxml-->
 <van-notice-bar
   left-icon="volume-o"
-  text="因施工需要，我校红天地下体育馆于下周暂停开放"
+  text="修改了边框"
   />
 <text class="mark">欢迎使用体育馆预约系统</text>
 <view class="full">

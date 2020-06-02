@@ -7,53 +7,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    placedata: [],
     show: false,
-    columns: ["0","1"],
-    gottime:"",
+    studyweek: 5,
+    columns: ["0", "1"],
+    gottime: "",
     usercode: "2016001",
-    listdata1: [{
-      "index":0,
-      "opendata": "9",
-      "week": "4",
-      "venue": "篮球馆1",
-      "fee": 10,
-      "time": "2020/02/09 14:51:22"
+    listdata: [],
+    listdata1: [],
+    listdata2: [],
+    indexlist:[]
 
-    }, {
-        "index": 1,
-        "opendata": "10",
-        "week": "4",
-        "venue": "篮球馆1",
-        "fee": 10,
-        "time": "2020/02/09 14:52:50"
-
-      }],
-    listdata2: [{
-      "opendata": "10",
-      "week": "2",
-      "venue": "篮球馆1",
-      "fee": 10,
-      "time": "2020/01/09 21:00:23"
-    },
-      {
-        "opendata": "9",
-        "week": "4",
-        "venue": "篮球馆1",
-        "fee": 10,
-        "time": "2020/01/08 15:20:03"
-      },
-      {
-        "opendata": "14",
-        "week": "4",
-        "venue": "篮球馆1",
-        "fee": 10,
-        "time": "2020/01/07 00:51:23"
-      },
-    
-    
-    
-    ],
-    
 
   },
   myorder: function (e) {
@@ -72,18 +36,121 @@ Page({
   onCancel() {
     this.setData({ show: false });
   },
+  getname: function (placecode) {
+   
+    for (let i = 0; i < this.data.placedata.length; i++) {
+      if (this.data.placedata[i].placecode == placecode){
+        return this.data.placedata[i].name
+      }
+      
+    }
+  },
+  getfee: function (placecode) {
+    
+    for (let i = 0; i < this.data.placedata.length; i++) {
+      if (this.data.placedata[i].placecode == placecode) {
+        return this.data.placedata[i].fee
+      }
+
+    }
+  },
+  getorder: function () {
+    let data = this.data.listdata
+    var mylist = []
+    var oldlist = []
+    var newlist = []
+
+
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].code == this.data.usercode) {
+        mylist.push(data[i])
+        if (data[i].reservedate[0] < this.data.studyweek) {
+          oldlist.push(data[i])
+        }else {
+          newlist.push(data[i])
+        }
+      }
+    }
+    console.log("my",mylist)
+    console.log("old", oldlist)
+    console.log("new", newlist)
+
+    console.log("mylist", mylist)
+    this.data.listdata2=[]
+    for (let i = 0; i < oldlist.length; i++) {
+      let tmp = {
+        "opendata": oldlist[i].reservedate[2],
+        "week": oldlist[i].reservedate[1],
+        "venue": this.getname(oldlist[i].placecode),
+        "fee": this.getfee(oldlist[i].placecode),
+        "time": "第" + oldlist[i].reservedate[0] + "学周",
+      }
+      this.data.listdata2.push(tmp)
+      this.setData({
+        listdata2: this.data.listdata2
+      })
+    }
+    this.data.listdata1 = []
+    for (let i = 0; i < newlist.length; i++) {
+      let tmp = {
+        "index":i,
+        "opendata": newlist[i].reservedate[2],
+        "week": newlist[i].reservedate[1],
+        "venue": this.getname(newlist[i].placecode),
+        "fee": this.getfee(newlist[i].placecode),
+        "time": "第" + newlist[i].reservedate[0] + "学周",
+      }
+      this.data.listdata1.push(tmp)
+      this.setData({
+        listdata1: this.data.listdata1,
+        indexlist:newlist
+      })
+    }
+
+
+
+  },
+  onPullDownRefresh: function () {
+    let that = this
+    this.setData({
+      listdata1: [],
+      listdata2: []
+    })
+    this.onLoad()
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var util = require("../../utils/util.js")
     let time = util.formatTime(new Date());
     console.log(time);
+    let tmp = wx.getStorageSync('usercode')
+    this.setData({
+      usercode: tmp
+    })
+    let that = this
+    db.collection("orders")
+      .get()
+      .then(res => {
+        that.setData({
+          listdata: res.data
+        })
+       
+      })
 
-    
-   
+    wx.cloud.callFunction({
+      name: "getList"
+    }).then(res => {
+      
+      that.setData({
+        placedata: res.result.data
+      })
+      that.getorder()
+    })
 
-  
+
+
   },
 
 })

@@ -1,17 +1,7 @@
 // pages/users/users.js
 //初始化数据库
 const db = wx.cloud.database()
-// wx.getSystemInfo({获取系统信息
-//   success(res) {
-//     console.log(res.model)
-//     console.log(res.pixelRatio)
-//     console.log(res.windowWidth)
-//     console.log(res.windowHeight)
-//     console.log(res.language)
-//     console.log(res.version)
-//     console.log(res.platform)
-//   }
-// })
+
 var mapchoose=""
 var mapchooseID=-1
 const venues = [];//场馆
@@ -286,6 +276,7 @@ Page({
       usercode: tmp
     })
     console.log("got usercode:", this.data.usercode)
+    
   },
 
 })

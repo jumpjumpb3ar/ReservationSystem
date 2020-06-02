@@ -16,7 +16,7 @@
     border="{{true}}"
   />
   <van-field
-    value="学生"
+    value="{{right}}"
     label="身份"
     left-icon="manager-o"
     readonly

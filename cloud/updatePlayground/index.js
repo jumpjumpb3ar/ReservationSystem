@@ -6,6 +6,7 @@ cloud.init()
 const db = cloud.database()
 const pglist = db.collection('playground')
 const uslist = db.collection('usablePlayground')
+const validweek = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
 var datalist//所有场地信息
 
 async function getdatalist() {
@@ -30,36 +31,7 @@ async function cleandata() {
     type: 1
   }).remove()
 
-  // for (value in datalist0){
-  //   await uslist.where({
-  //     _id: value._id
-  //   }).remove().then(res => { return })
-  //     .catch(e => {
-  //       throw new Error("删除数据失败 @ cleandata");
-  //     })
-  // }
-  // await datalist0.forEach(async function (value, index, array) {
-  //   await uslist.where({
-  //     _id: value._id
-  //   }).remove().then(res => { return })
-  //     .catch(e => {
-  //       throw new Error("[cleandata]:删除数据失败 @ cleandata");
-  //     })
-  // });
-
-
-
-  // await uslist.get().then(res => {
-  //   let len = res.data.length
-  //   let datalist0 = res.data
-  //   console.log("删除前uslist的长度:" + len)
-  //   for (let i = 0; i < len; i++) {
-  //     uslist.where({
-  //       _id: datalist0[i]._id
-  //     }).remove().catch(e => {
-  //       throw new Error("删除数据失败 @ cleandata");
-  //     })
-  //   }
+  
   
   uslist.count().then(res => {
     console.log("[cleandata]:现在usableList的长度:" + res.total)
@@ -73,18 +45,28 @@ async function  insertdata () {
   await uslist.count().then(res => {
     console.log("[insertdata]:插入前usableLits的长度:" + res.total)
   })
-
-  
-
-
-
-
-
-
-
-
-
-  
+  for(let i=0;i<datalist.length;i++){
+    console.log(i)
+    for(let j=0;j<datalist[i].week.length;j++){
+      try{
+      uslist.add({
+        data:{
+          "type":1,
+          "placecode": datalist[i].placecode,
+          "week": datalist[i].week[j],
+          "opendata": datalist[i].opendate,
+          "fee": datalist[i].fee,
+          "maxpeople": datalist[i].maxpeople,
+          "nowpeople": datalist[i].maxpeople
+        }
+      })
+      
+      }catch(e){
+        console.log(e)
+      }
+      
+    }
+  }
   console.log("[insertdata]:插入完成")
   return
 }

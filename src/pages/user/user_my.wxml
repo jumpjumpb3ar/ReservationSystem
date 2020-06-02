@@ -1,4 +1,5 @@
 <!--src/pages/user/user_my.wxml-->
+<view class = "tabpage">
 <view class="table">
   <text class="mark">月总榜</text>
   <view class="tr bg-w">
@@ -52,4 +53,5 @@
 
 <view class="tabbar">
   <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange" current="1"></mp-tabbar>
+</view>
 </view>

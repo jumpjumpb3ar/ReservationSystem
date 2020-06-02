@@ -1,13 +1,15 @@
 <!--pages/user/user_myorder.wxml-->
 <view class="table">
-  <text class="mark"><text class="venue">[{{usercode}}]</text>的当前预约</text>
+  <text class="mark"><text class="venue">[{{usercode}}]</text>的当前预约
+  </text>
+  <text class="mark">当前学周<text class="venue">{{studyweek}}</text></text>
   <view class="tr bg-w">
     <view class="th">编号</view>
     <view class="th">时段</view>
     <view class="th">星期</view>
     <view class="th">场馆</view>
     <view class="th">费用</view>
-    <view class="th">订单时间</view>
+    <view class="th">预约学周</view>
   </view>
   <view wx:for="{{listdata1}}" wx:key="_id" data-index="{{index}}">
     <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
@@ -36,7 +38,7 @@
     <view class="th">星期</view>
     <view class="th">场馆</view>
     <view class="th">费用</view>
-    <view class="th">订单时间</view>
+    <view class="th">学周</view>
   </view>
   <view wx:for="{{listdata2}}" wx:key="_id" data-index="{{index}}">
     <view class="tr bg-g" wx:if="{{index % 2 == 0}}">

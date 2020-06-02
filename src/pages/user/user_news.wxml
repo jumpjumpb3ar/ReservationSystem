@@ -1,5 +1,5 @@
 <!--src/pages/user/user_my.wxml-->
-
+<view class = "tabpage">
 <view class="mark">新闻</view>
 
 <view wx:for="{{listdata}}" wx:key="_id" data-index="{{index}}">
@@ -20,4 +20,5 @@
 
 <view class="tabbar">
   <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange" current="2"></mp-tabbar>
+</view>
 </view>

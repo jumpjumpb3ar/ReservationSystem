@@ -26,7 +26,8 @@
     "pages/manager/manager_my",
     "pages/manager/manager_news",
     "pages/index/index",
-    "pages/manager/create_news"
+    "pages/manager/create_news",
+    "pages/test"
   ],
   "window": {
     "backgroundTextStyle": "light",

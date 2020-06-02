@@ -115,6 +115,13 @@
 					"pathName": "pages/manager/manager_news",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "user=\"2016001\"&password=\"123456\"",
+					"scene": null
 				}
 			]
 		}

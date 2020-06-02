@@ -1,5 +1,6 @@
 <!--pages/manager/manager_my.wxml-->
 <!--pages/user/user_myinfo.wxml-->
+<view class = "tabpage">
 <text class="mark">账号信息</text>
 <van-cell-group>
   <van-field value="{{code}}" label="学号" left-icon="user-circle-o" readonly border="{{ true }}" />
@@ -83,4 +84,5 @@
 
 <view class="tabbar">
   <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange" current="1"></mp-tabbar>
+</view>
 </view>
